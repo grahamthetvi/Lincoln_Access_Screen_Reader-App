@@ -1,0 +1,49 @@
+# Lincoln Access Screen Reader
+
+This repository is **Lincoln Access Screen Reader**, a GPLv2-licensed fork derived from [NVDA](https://www.nvaccess.org/) (NonVisual Desktop Access). It is not affiliated with or endorsed by NV Access.
+
+**Project site:** [Lincoln Access Screen Reader](https://grahamthetvi.github.io/Lincoln_Access_Screen_Reader-Website/) (deployment, privacy posture, Illinois / SOPPA context).
+
+**Source repository:** [github.com/grahamthetvi/Lincoln_Access_Screen_Reader](https://github.com/grahamthetvi/Lincoln_Access_Screen_Reader) — clone with `git clone https://github.com/grahamthetvi/Lincoln_Access_Screen_Reader.git`.
+
+**Maintainer:** Addison Graham (Springfield, Illinois). This build is configured so routine student personal information is not collected for the maintainer; third-party update and add-on catalog contact is off by default—review `source/versionInfo.py` and `[addonStore]` / `[update]` defaults.
+
+**Distribution builds (no NV Access update channel):** When building a release with SCons, pass an empty `updateVersionType` (for example `updateVersionType=` with no value) so generated `source/_buildVersion.py` sets `updateVersionType` to `None`. That disables the upstream update checker and related UI. **Add-on store catalog:** By default, `enableRemoteCatalog` is `false` in `[addonStore]` so the NV Access add-on metadata API is not contacted; set it to `true` in `nvda.ini` only if you intentionally use a catalog mirror.
+
+Upstream introduction: NVDA is a free, open source screen reader for Microsoft Windows.
+It is developed by NV Access in collaboration with a global community of contributors.
+To learn more about NVDA or download a copy, visit the main [NV Access](http://www.nvaccess.org/) website.
+
+Please note: the NVDA project has a [Citizen and Contributor Code of Conduct](CODE_OF_CONDUCT.md). NV Access expects that all contributors and other community members will read and abide by the rules set out in this document while participating or contributing to this project.
+
+The NVDA project is guided by a [product vision statement and set of principles](./projectDocs/product_vision.md).
+The vision and principles should be always considered when planning features and prioritizing work.
+NV Access also maintains a [development roadmap](https://www.nvaccess.org/post/nvda-roadmap/) of NVDA features and supporting infrastructure work.
+
+NVDA is available under a modified GNU General Public License version 2 or later.
+Please refer to [our license](./copying.txt) for more information.
+
+## Acknowledgements
+
+We would like to extend our sincere gratitude to [SignPath](https://www.signpath.io/) for their generous support in providing code signing services to many open source projects, including NVDA.
+Their contribution helps us maintain the security and integrity of our releases.
+
+## NVDA Community
+
+* [Support and information for NVDA users](https://www.nvaccess.org/get-help/)
+* [Report an issue or feature request](./projectDocs/issues/readme.md)
+* [Getting add-ons](https://download.nvaccess.org/documentation/userGuide.html#AddonsManager)
+* [Contact list](./projectDocs/community/expertsList.md) for NV Access and community experts.
+* [More important links and community information](./projectDocs/community/readme.md)
+
+## Contributing to NVDA
+
+If you would like to contribute to NVDA, you can read more information in our [contributing guide](./.github/CONTRIBUTING.md).
+This includes information on reporting issues, triaging issues, testing, translating, contributing code/documentation and creating add-ons.
+
+## Status checks
+
+* Alpha build status: [![view latest alpha builds](https://github.com/nvaccess/nvda/actions/workflows/testAndPublish.yml/badge.svg?branch=master)](https://github.com/nvaccess/nvda/actions/workflows/testAndPublish.yml?query=branch%3Amaster+event%3Apush)
+* Beta build status: [![view latest beta builds](https://github.com/nvaccess/nvda/actions/workflows/testAndPublish.yml/badge.svg?branch=beta)](https://github.com/nvaccess/nvda/actions/workflows/testAndPublish.yml?query=branch%3Abeta+event%3Apush)
+* Pre-commit status (master): [![view pre-commit checks on master](https://results.pre-commit.ci/badge/github/nvaccess/nvda/master.svg)](https://results.pre-commit.ci/latest/github/nvaccess/nvda/master)
+* CodeQL security analysis status (master): [![view CodeQL security analysis checks on master](https://github.com/nvaccess/nvda/actions/workflows/codeql.yml/badge.svg)](https://github.com/nvaccess/nvda/actions/workflows/codeql.yml)
