@@ -1,0 +1,6 @@
+[submodule "miscDeps"]
+	path = miscDeps
+	url = https://github.com/nvaccess/nvda-misc-deps.git
+[submodule "include/nvda-mathcat"]
+	path = include/nvda-mathcat
+	url = https://github.com/nvaccess/nvda-mathcat.git
