@@ -26,7 +26,7 @@ class LogViewer(
 
 	def __init__(self, parent):
 		# Translators: The title of the NVDA log viewer window.
-		super(LogViewer, self).__init__(parent, wx.ID_ANY, _("NVDA Log Viewer"))
+		super(LogViewer, self).__init__(parent, wx.ID_ANY, _("LASR Log Viewer"))
 		self.Bind(wx.EVT_ACTIVATE, self.onActivate)
 		self.Bind(wx.EVT_CLOSE, self.onClose)
 		mainSizer = wx.BoxSizer(wx.VERTICAL)

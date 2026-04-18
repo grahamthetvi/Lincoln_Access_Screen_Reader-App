@@ -305,7 +305,7 @@ class ConsoleUI(
 	helpId = "PythonConsole"
 
 	def __init__(self, parent):
-		super().__init__(parent, wx.ID_ANY, _("NVDA Python Console"))
+		super().__init__(parent, wx.ID_ANY, _("LASR Python Console"))
 		self.Bind(wx.EVT_ACTIVATE, self.onActivate)
 		self.Bind(wx.EVT_CLOSE, self.onClose)
 		mainSizer = wx.BoxSizer(wx.VERTICAL)

@@ -145,7 +145,7 @@ def doStartupDialogs():
 
 		gui.messageBox(
 			# Translators: Shown when NVDA has been started with unknown command line parameters.
-			_("The following command line parameters are unknown to NVDA: {params}").format(
+			_("The following command line parameters are unknown to LASR: {params}").format(
 				params=", ".join(unknownCLIParams),
 			),
 			# Translators: Title of the dialog letting user know
@@ -181,8 +181,7 @@ def doStartupDialogs():
 		import wx
 
 		gui.messageBox(
-			_(
-				"Your gesture map file contains errors.\n"
+			_("Your gesture map file contains errors.\n"
 				"More details about the errors can be found in the log file.",
 			),
 			_("gesture map File Error"),
@@ -804,7 +803,7 @@ def main():
 	if not globalVars.appArgs.minimal and timeSinceStart > 5:
 		log.debugWarning("Slow starting core (%.2f sec)" % timeSinceStart)
 		# Translators: This is spoken when NVDA is starting.
-		speech.speakMessage(_("Loading NVDA. Please wait..."))
+		speech.speakMessage(_("Loading LASR. Please wait..."))
 
 	import wx
 
@@ -952,7 +951,7 @@ def main():
 	elif not globalVars.appArgs.minimal:
 		try:
 			# Translators: This is shown on a braille display (if one is connected) when NVDA starts.
-			braille.handler.message(_("NVDA started"))
+			braille.handler.message(_("LASR started"))
 		except:  # noqa: E722
 			log.error("", exc_info=True)
 		if globalVars.appArgs.launcher:

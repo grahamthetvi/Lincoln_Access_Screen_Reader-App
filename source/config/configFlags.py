@@ -172,8 +172,7 @@ class ReportLineIndentation(DisplayStringIntEnum):
 			# Translators: A choice in a combo box in the document formatting dialog to report indentation
 			# with tones.
 			ReportLineIndentation.TONES: pgettext("line indentation setting", "Tones"),
-			ReportLineIndentation.SPEECH_AND_TONES: pgettext(
-				"line indentation setting",
+			ReportLineIndentation.SPEECH_AND_TONES: pgettext("line indentation setting",
 				# Translators: A choice in a combo box in the document formatting dialog to report indentation with both
 				# Speech and tones.
 				"Both Speech and Tones",
@@ -207,8 +206,7 @@ class ReportSpellingErrors(DisplayStringIntFlag):
 			# Translators: A value reported by the cycle script defining how spelling errors are reported, also used
 			# as choice in a checklist box in the document formatting dialog to report spelling errors with a sound.
 			ReportSpellingErrors.SOUND: pgettext("reportSpellingErrorsSetting", "Sound"),
-			ReportSpellingErrors.SPEECH_AND_SOUND: pgettext(
-				"reportSpellingErrorsSetting",
+			ReportSpellingErrors.SPEECH_AND_SOUND: pgettext("reportSpellingErrorsSetting",
 				# Translators: A value reported by the cycle script defining how spelling errors are reported.
 				"Speech and sound",
 			),
@@ -454,8 +452,7 @@ class PlayErrorSound(DisplayStringIntEnum):
 	@property
 	def _displayStringLabels(self):
 		return {
-			PlayErrorSound.ONLY_IN_TEST_VERSIONS: pgettext(
-				"advanced.playErrorSound",
+			PlayErrorSound.ONLY_IN_TEST_VERSIONS: pgettext("advanced.playErrorSound",
 				# Translators: Label for a value in the Play a sound for logged errors combobox, in the Advanced settings.
 				"Only in NVDA test versions",
 			),

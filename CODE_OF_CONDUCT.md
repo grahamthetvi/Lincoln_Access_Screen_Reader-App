@@ -2,9 +2,9 @@
 
 ## 1. Purpose
 
-A primary goal of NV Access and NVDA is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, nationality, socioeconomic status, education, level of experience and religion (or lack thereof).
+A primary goal of NV Access and LASR is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, nationality, socioeconomic status, education, level of experience and religion (or lack thereof).
 This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behaviour.
-We invite all those who participate in the NVDA community to help us create safe and positive experiences for everyone. NVDA is a user driven initiative.
+We invite all those who participate in the LASR community to help us create safe and positive experiences for everyone. LASR is a user driven initiative.
 
 ## 2. Open Source Citizenship
 
@@ -65,7 +65,7 @@ If you feel you have been falsely or unfairly accused of violating this Code of 
 
 We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues--online and in-person--as well as in all one-on-one communications pertaining to community business.
 This code of conduct and its related procedures also applies to unacceptable behaviour occurring outside the scope of community activities when such behaviour has the potential to adversely affect the safety and well-being of community members.
-For others setting up or running an NVDA group of any kind, it is strongly recommended that a complementary Citizen and Contributor Code of Conduct is adopted.
+For others setting up or running an LASR group of any kind, it is strongly recommended that a complementary Citizen and Contributor Code of Conduct is adopted.
 
 ## 9. Contact info
 

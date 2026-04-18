@@ -2557,7 +2557,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for quit NVDA command.
-		description=_("Quits NVDA!"),
+		description=_("Quits LASR!"),
 		gesture="kb:NVDA+q",
 	)
 	def script_quit(self, gesture):
@@ -2565,14 +2565,14 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for restart NVDA command.
-		description=_("Restarts NVDA!"),
+		description=_("Restarts LASR!"),
 	)
 	def script_restart(self, gesture):
 		core.restart()
 
 	@script(
 		# Translators: Input help mode message for show NVDA menu command.
-		description=_("Shows the NVDA menu"),
+		description=_("Shows the LASR menu"),
 		gestures=("kb:NVDA+n", "ts:2finger_double_tap"),
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3271,7 +3271,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for Open user configuration directory command.
-		description=_("Opens NVDA configuration directory for the current user."),
+		description=_("Opens LASR configuration directory for the current user."),
 		category=SCRCAT_TOOLS,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.SECURE_MODE)
@@ -3411,7 +3411,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to general settings command.
-		description=_("Shows NVDA's general settings"),
+		description=_("Shows LASR's general settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+g",
 	)
@@ -3421,7 +3421,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to select synthesizer command.
-		description=_("Shows the NVDA synthesizer selection dialog"),
+		description=_("Shows the LASR synthesizer selection dialog"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+s",
 	)
@@ -3431,7 +3431,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to speech settings command.
-		description=_("Shows NVDA's speech settings"),
+		description=_("Shows LASR's speech settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+v",
 	)
@@ -3441,7 +3441,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to select braille display command.
-		description=_("Shows the NVDA braille display selection dialog"),
+		description=_("Shows the LASR braille display selection dialog"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+a",
 	)
@@ -3451,7 +3451,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to braille settings command.
-		description=_("Shows NVDA's braille settings"),
+		description=_("Shows LASR's braille settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3460,7 +3460,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to audio settings command.
-		description=_("Shows NVDA's audio settings"),
+		description=_("Shows LASR's audio settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+u",
 	)
@@ -3470,7 +3470,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to privacy and security settings command.
-		description=_("Shows NVDA's privacy and security settings"),
+		description=_("Shows LASR's privacy and security settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3479,7 +3479,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to vision settings command.
-		description=_("Shows NVDA's vision settings"),
+		description=_("Shows LASR's vision settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3488,7 +3488,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to keyboard settings command.
-		description=_("Shows NVDA's keyboard settings"),
+		description=_("Shows LASR's keyboard settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+k",
 	)
@@ -3498,7 +3498,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to mouse settings command.
-		description=_("Shows NVDA's mouse settings"),
+		description=_("Shows LASR's mouse settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+m",
 	)
@@ -3508,7 +3508,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to review cursor settings command.
-		description=_("Shows NVDA's review cursor settings"),
+		description=_("Shows LASR's review cursor settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3517,7 +3517,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to input composition settings command.
-		description=_("Shows NVDA's input composition settings"),
+		description=_("Shows LASR's input composition settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3526,7 +3526,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to object presentation settings command.
-		description=_("Shows NVDA's object presentation settings"),
+		description=_("Shows LASR's object presentation settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+o",
 	)
@@ -3536,7 +3536,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to browse mode settings command.
-		description=_("Shows NVDA's browse mode settings"),
+		description=_("Shows LASR's browse mode settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+b",
 	)
@@ -3546,7 +3546,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to document formatting settings command.
-		description=_("Shows NVDA's document formatting settings"),
+		description=_("Shows LASR's document formatting settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+d",
 	)
@@ -3565,7 +3565,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to Add-on Store settings command.
-		description=_("Shows NVDA's Add-on Store settings"),
+		description=_("Shows LASR's Add-on Store settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3574,7 +3574,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to Windows OCR settings command.
-		description=_("Shows NVDA's Windows OCR settings"),
+		description=_("Shows LASR's Windows OCR settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3583,7 +3583,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to Advanced settings command.
-		description=_("Shows NVDA's Advanced settings"),
+		description=_("Shows LASR's Advanced settings"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3592,7 +3592,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for opening default dictionary dialog.
-		description=_("Shows the NVDA default dictionary dialog"),
+		description=_("Shows the LASR default dictionary dialog"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3601,7 +3601,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for opening voice-specific dictionary dialog.
-		description=_("Shows the NVDA voice-specific dictionary dialog"),
+		description=_("Shows the LASR voice-specific dictionary dialog"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3610,7 +3610,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for opening temporary dictionary.
-		description=_("Shows the NVDA temporary dictionary dialog"),
+		description=_("Shows the LASR temporary dictionary dialog"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3619,7 +3619,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to punctuation/symbol pronunciation dialog.
-		description=_("Shows the NVDA symbol pronunciation dialog"),
+		description=_("Shows the LASR symbol pronunciation dialog"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3628,7 +3628,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to input gestures dialog command.
-		description=_("Shows the NVDA input gestures dialog"),
+		description=_("Shows the LASR input gestures dialog"),
 		category=SCRCAT_CONFIG,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
@@ -3637,7 +3637,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for go to magnifier settings command.
-		description=_("Shows NVDA's magnifier settings"),
+		description=_("Shows LASR's magnifier settings"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+w",
 	)
@@ -3647,7 +3647,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for the report current configuration profile command.
-		description=_("Reports the name of the current NVDA configuration profile"),
+		description=_("Reports the name of the current LASR configuration profile"),
 		category=SCRCAT_CONFIG,
 		speakOnDemand=True,
 	)
@@ -3668,7 +3668,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for save current configuration command.
-		description=_("Saves the current NVDA configuration"),
+		description=_("Saves the current LASR configuration"),
 		category=SCRCAT_CONFIG,
 		gesture="kb:NVDA+control+c",
 	)
@@ -3693,7 +3693,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for activate python console command.
-		description=_("Activates the NVDA Python Console, primarily useful for development"),
+		description=_("Activates the LASR Python Console, primarily useful for development"),
 		category=SCRCAT_TOOLS,
 		gesture="kb:NVDA+control+z",
 	)
@@ -3713,7 +3713,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message to activate Add-on Store command.
-		description=_("Activates the Add-on Store to browse and manage add-on packages for NVDA"),
+		description=_("Activates the Add-on Store to browse and manage add-on packages for LASR"),
 		category=SCRCAT_TOOLS,
 	)
 	def script_activateAddonsManager(self, gesture: inputCore.InputGesture):
@@ -4352,7 +4352,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Input help mode message for a braille command.
-		description=_("Virtually toggles the NVDA key to emulate a keyboard shortcut with braille input"),
+		description=_("Virtually toggles the LASR key to emulate a keyboard shortcut with braille input"),
 		category=inputCore.SCRCAT_KBEMU,
 		bypassInputHelp=True,
 	)
@@ -4702,7 +4702,7 @@ class GlobalCommands(ScriptableObject):
 
 	@script(
 		# Translators: Describes the command to open the Configuration Profiles dialog.
-		description=_("Shows the NVDA Configuration Profiles dialog"),
+		description=_("Shows the LASR Configuration Profiles dialog"),
 		category=SCRCAT_CONFIG_PROFILES,
 		gesture="kb:NVDA+control+p",
 	)
@@ -5257,8 +5257,7 @@ class GlobalCommands(ScriptableObject):
 		audio._toggleSoundSplitState()
 
 	@script(
-		description=pgettext(
-			"reportLanguage",
+		description=pgettext("reportLanguage",
 			# Translators: Input help mode message for report language for caret command.
 			"Reports the language for the text under the caret. "
 			"If pressed twice, presents the information in browse mode",
@@ -5283,8 +5282,7 @@ class GlobalCommands(ScriptableObject):
 		message = languageDescription
 		curSynth = synthDriverHandler.getSynth()
 		if not curSynth.languageIsSupported(curLanguage):
-			message = pgettext(
-				"reportLanguage",
+			message = pgettext("reportLanguage",
 				# Translators: Language of the character at caret position when it's not supported by the current synthesizer.
 				"{languageDescription} (not supported)",
 			).format(
@@ -5450,7 +5448,7 @@ class ConfigProfileActivationCommands(ScriptableObject):
 		if gui.shouldConfigProfileTriggersBeSuspended():
 			# Translators: a message indicating that configuration profiles can't be activated using gestures,
 			# due to profile activation being suspended.
-			state = _("Can't change the active profile while an NVDA dialog is open")
+			state = _("Can't change the active profile while an LASR dialog is open")
 		elif config.conf.profiles[-1].name == name:
 			config.conf.manualActivateProfile(None)
 			# Translators: a message when a configuration profile is manually deactivated.

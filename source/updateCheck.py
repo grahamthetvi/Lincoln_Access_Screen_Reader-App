@@ -498,7 +498,7 @@ class UpdateResultDialog(
 
 	def __init__(self, parent, updateInfo: UpdateInfo | None, auto: bool) -> None:
 		# Translators: The title of the dialog informing the user about an NVDA update.
-		super().__init__(parent, title=_("NVDA Update"))
+		super().__init__(parent, title=_("LASR Update"))
 
 		self.updateInfo = updateInfo
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
@@ -550,7 +550,7 @@ class UpdateResultDialog(
 				self,
 				# Translators: The label of a button to apply a pending NVDA update.
 				# {version} will be replaced with the version; e.g. 2011.3.
-				label=_("&Update to NVDA {version}").format(version=updateInfo.version),
+				label=_("&Update to LASR {version}").format(version=updateInfo.version),
 			)
 			self.updateButton.Bind(
 				wx.EVT_BUTTON,
@@ -565,7 +565,7 @@ class UpdateResultDialog(
 		else:
 			# Translators: A message indicating that an updated version of NVDA is available.
 			# {version} will be replaced with the version; e.g. 2011.3.
-			message = _("NVDA version {version} is available.").format(version=updateInfo.version)
+			message = _("LASR version {version} is available.").format(version=updateInfo.version)
 			bHelper.addButton(
 				self,
 				# Translators: The label of a button to download an NVDA update.
@@ -638,11 +638,11 @@ class UpdateAskInstallDialog(
 		self.backCompatTo = backCompatTo
 		self.storeUpdatesDirWritable = os.path.isdir(storeUpdatesDir) and os.access(storeUpdatesDir, os.W_OK)
 		# Translators: The title of the dialog asking the user to apply an NVDA update.
-		super().__init__(parent, title=_("NVDA Update"))
+		super().__init__(parent, title=_("LASR Update"))
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 		sHelper = guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
 		# Translators: A message indicating that an update to NVDA is ready to be applied.
-		message = _("Update to NVDA version {version} is ready to be applied.\n").format(version=version)
+		message = _("Update to LASR version {version} is ready to be applied.\n").format(version=version)
 
 		showAddonCompat = (self.backCompatTo[0] > addonAPIVersion.BACK_COMPAT_TO[0]) and any(
 			getIncompatibleAddons(

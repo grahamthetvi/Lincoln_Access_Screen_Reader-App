@@ -123,8 +123,7 @@ class AppModule(appModuleHandler.AppModule):
 			)
 
 	@script(
-		description=pgettext(
-			"poedit",
+		description=pgettext("poedit",
 			# Translators: The description of an NVDA command for Poedit.
 			"Reports any notes for translators. If pressed twice, presents the notes in browse mode",
 		),
@@ -147,8 +146,7 @@ class AppModule(appModuleHandler.AppModule):
 		return self._getNVDAObjectForWindowControlId(_WindowControlId.TRANSLATOR_COMMENT)
 
 	@script(
-		description=pgettext(
-			"poedit",
+		description=pgettext("poedit",
 			# Translators: The description of an NVDA command for Poedit.
 			"Reports any comment in the comments window. "
 			"If pressed twice, presents the comment in browse mode",
@@ -174,8 +172,7 @@ class AppModule(appModuleHandler.AppModule):
 		)
 
 	@script(
-		description=pgettext(
-			"poedit",
+		description=pgettext("poedit",
 			# Translators: The description of an NVDA command for Poedit.
 			"Reports the previous source text, if any. If pressed twice, presents the text in browse mode",
 		),
@@ -200,8 +197,7 @@ class AppModule(appModuleHandler.AppModule):
 		)
 
 	@script(
-		description=pgettext(
-			"poedit",
+		description=pgettext("poedit",
 			# Translators: The description of an NVDA command for Poedit.
 			"Reports a translation issue, if any. If pressed twice, presents the warning in browse mode",
 		),

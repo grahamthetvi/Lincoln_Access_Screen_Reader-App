@@ -122,8 +122,7 @@ def _shouldProceedWhenInstalledAddonVersionUnknown(
 ) -> tuple[bool, bool]:
 	# an installed add-on should have an addon Handler Model
 	assert addon._addonHandlerModel
-	incompatibleMessage = pgettext(
-		"addonStore",
+	incompatibleMessage = pgettext("addonStore",
 		# Translators: The message displayed when updating an add-on, but the installed version
 		# identifier can not be compared with the version to be installed.
 		"Warning: add-on installation may result in downgrade: {name}. "
@@ -155,8 +154,7 @@ def _shouldProceedToRemoveAddonDialog(
 	addon: "SupportsVersionCheck",
 	useRememberChoiceCheckbox: bool = False,
 ) -> tuple[bool, bool]:
-	removeMessage = pgettext(
-		"addonStore",
+	removeMessage = pgettext("addonStore",
 		# Translators: Presented when attempting to remove the selected add-on.
 		# {addon} is replaced with the add-on name.
 		"Are you sure you wish to remove the {addon} add-on from NVDA? This cannot be undone.",
@@ -178,8 +176,7 @@ def _shouldInstallWhenAddonTooOldDialog(
 	addon: _AddonGUIModel,
 	useRememberChoiceCheckbox: bool = False,
 ) -> tuple[bool, bool]:
-	incompatibleMessage = pgettext(
-		"addonStore",
+	incompatibleMessage = pgettext("addonStore",
 		# Translators: The message displayed when installing an add-on package that is incompatible
 		# because the add-on is too old for the running version of NVDA.
 		"Warning: add-on is incompatible: {name} {version}. "
@@ -211,8 +208,7 @@ def _shouldEnableWhenAddonTooOldDialog(
 	addon: _AddonGUIModel,
 	useRememberChoiceCheckbox: bool = False,
 ) -> tuple[bool, bool]:
-	incompatibleMessage = pgettext(
-		"addonStore",
+	incompatibleMessage = pgettext("addonStore",
 		# Translators: The message displayed when enabling an add-on package that is incompatible
 		# because the add-on is too old for the running version of NVDA.
 		"Warning: add-on is incompatible: {name} {version}. "
@@ -292,8 +288,7 @@ def _showConfirmAddonInstallDialog(
 
 def _showAddonInfo(addon: _AddonGUIModel) -> None:
 	message = [
-		pgettext(
-			"addonStore",
+		pgettext("addonStore",
 			# Translators: message shown in the Addon Information dialog.
 			"{summary} ({name})\nVersion: {version}\nDescription: {description}\n",
 		).format(
@@ -315,12 +310,12 @@ def _showAddonInfo(addon: _AddonGUIModel) -> None:
 	minimumNVDAVersion = addonAPIVersion.formatForGUI(addon.minimumNVDAVersion)
 	message.append(
 		# Translators: the minimum NVDA version part of the About Add-on information
-		pgettext("addonStore", "Minimum required NVDA version: {}\n").format(minimumNVDAVersion),
+		pgettext("addonStore", "Minimum required LASR version: {}\n").format(minimumNVDAVersion),
 	)
 	lastTestedNVDAVersion = addonAPIVersion.formatForGUI(addon.lastTestedNVDAVersion)
 	message.append(
 		# Translators: the last NVDA version tested part of the About Add-on information
-		pgettext("addonStore", "Last NVDA version tested: {}\n").format(lastTestedNVDAVersion),
+		pgettext("addonStore", "Last LASR version tested: {}\n").format(lastTestedNVDAVersion),
 	)
 	# Translators: title for the Addon Information dialog
 	title = pgettext("addonStore", "Add-on Information")
@@ -341,8 +336,7 @@ class _SafetyWarningDialog(
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 		sHelper = BoxSizerHelper(self, orientation=wx.VERTICAL)
 
-		_warningText = pgettext(
-			"addonStore",
+		_warningText = pgettext("addonStore",
 			# Translators: Warning that is displayed before using the Add-on Store.
 			"Add-ons are created by the NVDA community and are not vetted by NV Access. "
 			"NV Access cannot be held responsible for add-on behavior. "
@@ -423,8 +417,7 @@ class UpdatableAddonsDialog(
 		evt.Skip()
 
 	def _setupMessage(self, sHelper: BoxSizerHelper):
-		_message = pgettext(
-			"addonStore",
+		_message = pgettext("addonStore",
 			# Translators: Message displayed when updates are available for some installed add-ons.
 			"Updates are available for some of your installed add-ons. ",
 		)
@@ -622,7 +615,7 @@ def _updateAddons(addonsPendingUpdate: list[_AddonGUIModel]):
 		AddonStoreVM.installPending()
 		ui.message(
 			# Translators: Message shown when updating add-ons automatically
-			pgettext("addonStore", "Add-ons updated, restart NVDA to activate changes"),
+			pgettext("addonStore", "Add-ons updated, restart LASR to activate changes"),
 			SpeechPriority.NEXT,
 		)
 
@@ -706,8 +699,7 @@ class _CopyAddonsDialog(
 		labelStrings = []
 		if availableAddons:
 			labelStrings.append(
-				pgettext(
-					"addonStore",
+				pgettext("addonStore",
 					# Translators: Explanatory text in the dialog which allows users to select which add-ons to copy to NVDA's system config.
 					"One or more add-ons are currently enabled in your NVDA configuration. "
 					"If run on secure screens, they will have unrestricted, higher-than-administrator level access to your entire system. "
@@ -858,12 +850,10 @@ class _CopyAddonsDialog(
 			messageStrings = []
 			if toCopy:
 				messageStrings.append(
-					npgettext(
-						"addonStore",
+					npgettext("addonStore",
 						# Translators: A message to warn the user when attempting to copy add-ons for use on secure screens
 						"You have selected to copy {num} add-on to NVDA's system-wide configuration. "
-						"Using this add-on during sign-in and on secure screens is a serious security risk.",
-						"You have selected to copy {num} add-ons to NVDA's system-wide configuration. "
+						"Using this add-on during sign-in and on secure screens is a serious security risk.", "You have selected to copy {num} add-ons to LASR's system-wide configuration. "
 						"Using these add-ons during sign-in and on secure screens is a serious security risk.",
 						len(toCopy),
 					).format(num=len(toCopy)),
@@ -873,8 +863,8 @@ class _CopyAddonsDialog(
 					npgettext(
 						"addonStore",
 						# Translators: A message to warn the user when copying their configuration will remove add-ons
-						"This action will remove {num} add-on from NVDA's system-wide configuration. ",
-						"This action will remove {num} add-ons from NVDA's system-wide configuration. ",
+						"This action will remove {num} add-on from LASR's system-wide configuration. ",
+						"This action will remove {num} add-ons from LASR's system-wide configuration. ",
 						countRemoved,
 					).format(num=countRemoved),
 				)

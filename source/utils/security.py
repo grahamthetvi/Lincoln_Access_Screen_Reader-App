@@ -383,7 +383,7 @@ def warnSessionLockStateUnknown() -> None:
 		unableToDetermineSessionLockStateMsg,
 		# Translators: This is the title for a warning dialog, shown if NVDA cannot determine if
 		# Windows is locked.
-		caption=_("Lock screen not secure while using NVDA"),
+		caption=_("Lock screen not secure while using LASR"),
 		style=wx.ICON_ERROR | wx.OK,
 	)
 

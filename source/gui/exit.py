@@ -76,7 +76,7 @@ class ExitDialog(wx.Dialog):
 		# Use a weakref so the instance can die.
 		ExitDialog._instance = weakref.ref(self)
 		# Translators: The title of the dialog to exit NVDA
-		super().__init__(parent, title=_("Exit NVDA"))
+		super().__init__(parent, title=_("Exit LASR"))
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 
 		warningMessages = []

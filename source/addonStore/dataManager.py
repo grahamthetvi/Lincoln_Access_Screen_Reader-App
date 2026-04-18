@@ -216,8 +216,7 @@ class _DataManager:
 
 	# Translators: A title of the dialog shown when fetching add-on data from the store fails
 	_updateFailureMessage = pgettext("addonStore", "Add-on data update failure")
-	_updateFailureMirrorSuggestion = pgettext(
-		"addonStore",
+	_updateFailureMirrorSuggestion = pgettext("addonStore",
 		# Translators: A suggestion of what to do when fetching add-on data from the store fails and a metadata mirror is being used.
 		# {url} will be replaced with the mirror URL.
 		"Make sure you are connected to the internet, and the Add-on Store mirror URL is valid.\n"

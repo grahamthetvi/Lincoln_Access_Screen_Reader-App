@@ -43,17 +43,17 @@ class SoundSplitState(DisplayStringIntEnum):
 				"NVDA in both channels and applications in both channels",
 			),
 			# Translators: Sound split state
-			SoundSplitState.NVDA_LEFT_APPS_RIGHT: _("NVDA on the left and applications on the right"),
+			SoundSplitState.NVDA_LEFT_APPS_RIGHT: _("LASR on the left and applications on the right"),
 			# Translators: Sound split state
-			SoundSplitState.NVDA_LEFT_APPS_BOTH: _("NVDA on the left and applications in both channels"),
+			SoundSplitState.NVDA_LEFT_APPS_BOTH: _("LASR on the left and applications in both channels"),
 			# Translators: Sound split state
-			SoundSplitState.NVDA_RIGHT_APPS_LEFT: _("NVDA on the right and applications on the left"),
+			SoundSplitState.NVDA_RIGHT_APPS_LEFT: _("LASR on the right and applications on the left"),
 			# Translators: Sound split state
-			SoundSplitState.NVDA_RIGHT_APPS_BOTH: _("NVDA on the right and applications in both channels"),
+			SoundSplitState.NVDA_RIGHT_APPS_BOTH: _("LASR on the right and applications in both channels"),
 			# Translators: Sound split state
-			SoundSplitState.NVDA_BOTH_APPS_LEFT: _("NVDA in both channels and applications on the left"),
+			SoundSplitState.NVDA_BOTH_APPS_LEFT: _("LASR in both channels and applications on the left"),
 			# Translators: Sound split state
-			SoundSplitState.NVDA_BOTH_APPS_RIGHT: _("NVDA in both channels and applications on the right"),
+			SoundSplitState.NVDA_BOTH_APPS_RIGHT: _("LASR in both channels and applications on the right"),
 		}
 
 	def getAppVolume(self) -> VolumeTupleT:

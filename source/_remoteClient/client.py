@@ -243,8 +243,7 @@ class RemoteClient:
 					parent=None,
 					# Translators: Title of the Remote Access disconnection confirmation dialog.
 					title=pgettext("remote", "Confirm Disconnection"),
-					message=pgettext(
-						"remote",
+					message=pgettext("remote",
 						# Translators: Message shown when disconnecting from the remote computer.
 						"Are you sure you want to disconnect from the Remote Access session?",
 					),
@@ -352,8 +351,7 @@ class RemoteClient:
 			return
 		if self.isConnected() or self.isConnecting:
 			gui.messageBox(
-				pgettext(
-					"remote",
+				pgettext("remote",
 					# Translators: Message shown when trying to connect while already connected.
 					"A Remote Access session is already in progress. Disconnect before starting a new session.",
 				),
@@ -699,8 +697,7 @@ class RemoteClient:
 		"""
 		if self.isConnected() or self.isConnecting:
 			gui.messageBox(
-				pgettext(
-					"remote",
+				pgettext("remote",
 					# Translators: Message shown when trying to connect while already connected.
 					"A Remote Access session is already in progress. Disconnect before starting a new session.",
 				),
@@ -717,8 +714,7 @@ class RemoteClient:
 
 			# Prepare connection request message based on mode
 			if conInfo.mode == ConnectionMode.LEADER:
-				question = pgettext(
-					"remote",
+				question = pgettext("remote",
 					# Translators: Ask the user if they want to control the remote computer.
 					"Do you wish to control the computer on server {server} with key {key}?",
 				)

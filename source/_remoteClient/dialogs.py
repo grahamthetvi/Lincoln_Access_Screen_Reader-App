@@ -118,8 +118,7 @@ class ClientPanel(ContextHelpMixin, wx.Panel):
 		self._keyGenerationProgressDialog.done()
 		self._keyGenerationProgressDialog = None
 		gui.messageBox(
-			pgettext(
-				"remote",
+			pgettext("remote",
 				# Translators: Message shown to users when requesting that a Remote Access server generate a key fails.
 				# {host} will be replaced with the address of the Remote Access server.
 				"Unable to connect to {host}. Check that you have internet access, and that there are no mistakes in the host field.",

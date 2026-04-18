@@ -21,11 +21,11 @@ This information will help us triage your report more quickly.
 * Indicators of compromise caused by the issue
 * If there is a known solution or approach to fixing this issue
 
-Examples of handled security issues in NVDA can be found in the [NVDA GitHub Security Advisories page](https://github.com/nvaccess/nvda/security/advisories).
+Examples of handled security issues in LASR can be found in the [LASR GitHub Security Advisories page](https://github.com/nvaccess/nvda/security/advisories).
 
 ## Security Advisory Group
 
-NV Access is committed to maintaining the highest standards of security in NVDA. In line with this commitment, we have established a Security Advisory Group. This group plays a pivotal role in enhancing the security of NVDA.
+NV Access is committed to maintaining the highest standards of security in LASR. In line with this commitment, we have established a Security Advisory Group. This group plays a pivotal role in enhancing the security of LASR.
 
 Objectives and Functioning:
 
@@ -38,9 +38,9 @@ We welcome participation from our user community. If you have a keen interest in
 
 ## Severity Levels
 
-* P1 (Exploitable high): Vulnerabilities of critical or high severity (CVSS v3/v4 score 7+) that demonstrate practical exploitability (e.g. active exploitation, public PoC or trivial execution) and pose an imminent threat to NVDA users.
+* P1 (Exploitable high): Vulnerabilities of critical or high severity (CVSS v3/v4 score 7+) that demonstrate practical exploitability (e.g. active exploitation, public PoC or trivial execution) and pose an imminent threat to LASR users.
 * P2 (Theoretical high): Vulnerabilities with significant potential impact (high CVSS) where the risk is deemed theoretical due to high attack complexity, specific non-default configurations or lack of a viable exploit path.
-* P3 (Standard): All other issues, including minor security weaknesses, best-practice hardening or library vulnerabilities confirmed to be unreachable or unused in NVDA.
+* P3 (Standard): All other issues, including minor security weaknesses, best-practice hardening or library vulnerabilities confirmed to be unreachable or unused in LASR.
 
 ## Response Timelines (SLAs)
 

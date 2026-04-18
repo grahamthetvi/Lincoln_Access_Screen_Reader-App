@@ -104,7 +104,7 @@ class MathCATInteraction(mathPres.MathInteractionNVDAObject):
 		except Exception:
 			log.exception()
 			# Translators: this message alerts users to an error in brailling math.
-			ui.message(pgettext("math", "Error in brailling math: see NVDA error log for details"))
+			ui.message(pgettext("math", "Error in brailling math: see LASR error log for details"))
 			region.rawText = ""
 
 		yield region
@@ -229,8 +229,7 @@ class MathCATInteraction(mathPres.MathInteractionNVDAObject):
 		mathMLWithNS: str = re.sub(self._hasDataAttr, "", text)
 		if not re.match(self._mathTagHasNameSpace, mathMLWithNS):
 			mathMLWithNS = mathMLWithNS.replace(
-				"math",
-				"math xmlns='http://www.w3.org/1998/Math/MathML'",
+				"math", "math xmlns='http://www.w3.org/1998/Math/MathML'",
 				1,
 			)
 		return mathMLWithNS

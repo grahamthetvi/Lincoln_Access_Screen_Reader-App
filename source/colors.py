@@ -160,8 +160,7 @@ def _calcColorName(red: int, green: int, blue: int, alpha: int, reportTransparen
 			closestName = hueName
 	# the color is transparent and expected to be reported.
 	if alpha < ALPHA_OPAQUE and reportTransparent:
-		closestName = pgettext(
-			"color variation",
+		closestName = pgettext("color variation",
 			# Translators: a transparent color, {colorDescription} replaced with the full description of the color e.g.
 			# "transparent bright orange-yellow"
 			"transparent {colorDescription}",

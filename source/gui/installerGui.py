@@ -95,9 +95,9 @@ def _showPostInstallDialog(isUpdate: bool, startAfterInstall: bool) -> None:
 	dialog.addButton(ReturnCode.CUSTOM_1, label=_("Restart &Windows"), defaultFocus=True)
 	if startAfterInstall:
 		# Translators: Button in the post-install dialog to start the newly installed NVDA.
-		dialog.addButton(ReturnCode.CUSTOM_2, label=_("&Start NVDA"), fallbackAction=True)
+		dialog.addButton(ReturnCode.CUSTOM_2, label=_("&Start LASR"), fallbackAction=True)
 	# Translators: Button in the post-install dialog to exit NVDA.
-	dialog.addButton(ReturnCode.CANCEL, label=_("E&xit NVDA"), fallbackAction=not startAfterInstall)
+	dialog.addButton(ReturnCode.CANCEL, label=_("E&xit LASR"), fallbackAction=not startAfterInstall)
 	match dialog.ShowModal():
 		case ReturnCode.CUSTOM_1:
 			if _restartWindows():
@@ -148,15 +148,15 @@ def doInstall(
 	progressDialog = gui.IndeterminateProgressDialog(
 		gui.mainFrame,
 		# Translators: The title of the dialog presented while NVDA is being updated.
-		_("Updating NVDA")
+		_("Updating LASR")
 		if isUpdate
 		# Translators: The title of the dialog presented while NVDA is being installed.
-		else _("Installing NVDA"),
+		else _("Installing LASR"),
 		# Translators: The message displayed while NVDA is being updated.
-		_("Please wait while your previous installation of NVDA is being updated.")
+		_("Please wait while your previous installation of LASR is being updated.")
 		if isUpdate
 		# Translators: The message displayed while NVDA is being installed.
-		else _("Please wait while NVDA is being installed"),
+		else _("Please wait while LASR is being installed"),
 	)
 	try:
 		res = systemUtils.execElevated(
@@ -199,7 +199,7 @@ def doInstall(
 		log.error("Installation failed: %s" % res)
 		gui.messageBox(
 			# Translators: The message displayed when an error occurs during installation of NVDA.
-			_("The installation of NVDA failed. Please check the Log Viewer for more information."),
+			_("The installation of LASR failed. Please check the Log Viewer for more information."),
 			# Translators: The title of a dialog presented when an error occurs.
 			_("Error"),
 			wx.OK | wx.ICON_ERROR,
@@ -269,7 +269,7 @@ class InstallerDialog(
 		self.isUpdate = isUpdate
 		self.textWrapWidth = 600
 		# Translators: The title of the Install NVDA dialog.
-		super().__init__(parent, title=_("Install NVDA"))
+		super().__init__(parent, title=_("Install LASR"))
 
 		import addonHandler
 		from addonStore.models.version import (
@@ -287,7 +287,7 @@ class InstallerDialog(
 		sHelper = guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
 
 		# Translators: An informational message in the Install NVDA dialog.
-		msg = _("To install NVDA to your hard drive, please press the Continue button.")
+		msg = _("To install LASR to your hard drive, please press the Continue button.")
 		if self.isUpdate:
 			msg += " " + _(
 				# Translators: An informational message in the Install NVDA dialog.
@@ -320,7 +320,7 @@ class InstallerDialog(
 		optionsBox = optionsSizer.GetStaticBox()
 
 		# Translators: The label of a checkbox option in the Install NVDA dialog.
-		startOnLogonText = _("Use NVDA during sign-in")
+		startOnLogonText = _("Use LASR during sign-in")
 		self.startOnLogonCheckbox = optionsHelper.addItem(wx.CheckBox(optionsBox, label=startOnLogonText))
 		self.bindHelpEvent("StartAtWindowsLogon", self.startOnLogonCheckbox)
 		if globalVars.appArgs.enableStartOnLogon is not None:
@@ -626,7 +626,7 @@ class PortableCreaterDialog(
 
 	def __init__(self, parent):
 		# Translators: The title of the Create Portable NVDA dialog.
-		super().__init__(parent, title=_("Create Portable NVDA"))
+		super().__init__(parent, title=_("Create Portable LASR"))
 		mainSizer = self.mainSizer = wx.BoxSizer(wx.VERTICAL)
 		sHelper = guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
 
@@ -762,7 +762,7 @@ def doCreatePortable(
 		# Translators: The title of the dialog presented while a portable copy of NVDA is being created.
 		_("Creating Portable Copy"),
 		# Translators: The message displayed while a portable copy of NVDA is being created.
-		_("Please wait while a portable copy of NVDA is created."),
+		_("Please wait while a portable copy of LASR is created."),
 	)
 	try:
 		systemUtils.ExecAndPump(installer.createPortableCopy, portableDirectory, copyUserConfig)
@@ -771,7 +771,7 @@ def doCreatePortable(
 		d.done()
 		if isinstance(e, installer.RetriableFailure):
 			# Translators: a message dialog asking to retry or cancel when NVDA portable copy creation fails
-			message = _("NVDA is unable to remove or overwrite a file.")
+			message = _("LASR is unable to remove or overwrite a file.")
 			# Translators: the title of a retry cancel dialog when NVDA portable copy creation  fails
 			title = _("File in Use")
 			if winUser.MessageBox(None, message, title, winUser.MB_RETRYCANCEL) == winUser.IDRETRY:
@@ -790,7 +790,7 @@ def doCreatePortable(
 		gui.messageBox(
 			# Translators: The message displayed when a portable copy of NVDA has been successfully created.
 			# {dir} will be replaced with the destination directory.
-			_("Successfully created a portable copy of NVDA at {dir}").format(dir=portableDirectory),
+			_("Successfully created a portable copy of LASR at {dir}").format(dir=portableDirectory),
 			# Translators: Title of a dialog shown when a portable copy of NVDA is created.
 			_("Success"),
 		)

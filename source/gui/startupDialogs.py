@@ -272,7 +272,7 @@ class AskAllowUsageStatsDialog(
 
 	def __init__(self, parent):
 		# Translators: The title of the dialog asking if usage data can be collected
-		super().__init__(parent, title=_("NVDA  Usage Data Collection"))
+		super().__init__(parent, title=_("LASR  Usage Data Collection"))
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
 

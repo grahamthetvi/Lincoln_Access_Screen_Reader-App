@@ -519,7 +519,7 @@ def _updateShortcuts(
 	)
 
 	# Translators: A label for a shortcut in start menu and a menu entry in NVDA menu (to go to NVDA website).
-	webSiteTranslated = _("NVDA web site")
+	webSiteTranslated = _("LASR web site")
 	_createShortcutWithFallback(
 		path=os.path.join(startMenuFolder, webSiteTranslated + ".lnk"),
 		fallbackPath=os.path.join(startMenuFolder, "NVDA web site.lnk"),
@@ -528,7 +528,7 @@ def _updateShortcuts(
 	)
 
 	# Translators: A label for a shortcut item in start menu to uninstall NVDA from the computer.
-	uninstallTranslated = _("Uninstall NVDA")
+	uninstallTranslated = _("Uninstall LASR")
 	_createShortcutWithFallback(
 		path=os.path.join(startMenuFolder, uninstallTranslated + ".lnk"),
 		fallbackPath=os.path.join(startMenuFolder, "Uninstall NVDA.lnk"),
@@ -538,7 +538,7 @@ def _updateShortcuts(
 	)
 
 	# Translators: A label for a shortcut item in start menu to open current user's NVDA configuration directory.
-	exploreConfDirTranslated = _("Explore NVDA user configuration directory")
+	exploreConfDirTranslated = _("Explore LASR user configuration directory")
 	_createShortcutWithFallback(
 		path=os.path.join(startMenuFolder, exploreConfDirTranslated + ".lnk"),
 		fallbackPath=os.path.join(startMenuFolder, "Explore NVDA user configuration directory.lnk"),
@@ -712,7 +712,7 @@ def registerAddonFileAssociation(slaveExe: str):
 			winreg.KEY_WRITE,
 		) as k:
 			# Translators: A file extension label for NVDA add-on package.
-			winreg.SetValueEx(k, None, 0, winreg.REG_SZ, _("NVDA add-on package"))
+			winreg.SetValueEx(k, None, 0, winreg.REG_SZ, _("LASR add-on package"))
 			with winreg.CreateKeyEx(k, "DefaultIcon", 0, winreg.KEY_WRITE) as k2:
 				winreg.SetValueEx(k2, None, 0, winreg.REG_SZ, "@{slaveExe},1".format(slaveExe=slaveExe))
 			# Point the open verb to nvda_slave addons_installAddonPackage action

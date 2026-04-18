@@ -190,8 +190,7 @@ class ExcelCell(ExcelObject):
 		return locationHelper.Point(x, y)
 
 	@script(
-		description=pgettext(
-			"excel-UIA",
+		description=pgettext("excel-UIA",
 			# Translators: the description of a script
 			"Shows a browseable message Listing information about a cell's "
 			"appearance such as outline and fill colors, rotation and size",
@@ -219,8 +218,7 @@ class ExcelCell(ExcelObject):
 				npgettext(
 					"excel-UIA",
 					# Translators: The rotation in degrees of an Excel cell
-					"Rotation: {0} degree",
-					"Rotation: {0} degrees",
+					"Rotation: {0} degree", "Rotation: {0} degrees",
 					self.rotation,
 				).format(self.rotation),
 			)
@@ -291,8 +289,7 @@ class ExcelCell(ExcelObject):
 		infoString = "\n".join(infoList)
 		ui.browseableMessage(
 			infoString,
-			title=pgettext(
-				"excel-UIA",
+			title=pgettext("excel-UIA",
 				# Translators: Title for a browsable message that describes the appearance of a cell in Excel
 				"Cell Appearance",
 			),
@@ -364,7 +361,7 @@ class ExcelCell(ExcelObject):
 		if controlTypes.State.FOCUSED in states and self.selectionContainer.getSelectedItemsCount() == 0:
 			# #12530: In some versions of Excel, the selection pattern reports 0 selected items,
 			# even though the focused UIA element reports as selected.
-			# NVDA only silences the positive SELECTED state when one item is selected.
+			# LASR only silences the positive SELECTED state when one item is selected.
 			# Therefore, by discarding both the SELECTED and SELECTABLE states,
 			# we eliminate the redundant selection announcement.
 			states.discard(controlTypes.State.SELECTED)
@@ -459,8 +456,7 @@ class ExcelCell(ExcelObject):
 				UIAHandler.UIA_ValueValuePropertyId,
 			)
 
-			cellCoordsTemplate = pgettext(
-				"excel-UIA",
+			cellCoordsTemplate = pgettext("excel-UIA",
 				# Translators: Excel, report selected range of cell coordinates
 				"{firstAddress} {firstValue} through {lastAddress} {lastValue}",
 			)
@@ -491,8 +487,7 @@ class ExcelCell(ExcelObject):
 				)
 				lastRow = firstRow + (self.rowSpan - 1)
 				lastAddress = f"{lastColumn}{lastRow}"
-				cellCoordsTemplate = pgettext(
-					"excel-UIA",
+				cellCoordsTemplate = pgettext("excel-UIA",
 					# Translators: Excel, report merged range of cell coordinates
 					"{firstAddress} through {lastAddress}",
 				)
@@ -535,8 +530,7 @@ class ExcelCell(ExcelObject):
 			else:
 				text = ngettext(
 					# Translators: a comment on a cell in Microsoft excel.
-					"Comment thread: {comment}  by {author} with {numReplies} reply",
-					"Comment thread: {comment}  by {author} with {numReplies} replies",
+					"Comment thread: {comment}  by {author} with {numReplies} reply", "Comment thread: {comment}  by {author} with {numReplies} replies",
 					numReplies,
 				).format(comment=comment, author=author, numReplies=numReplies)
 			ui.message(text)

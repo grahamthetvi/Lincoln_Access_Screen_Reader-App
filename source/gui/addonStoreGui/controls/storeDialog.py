@@ -131,7 +131,7 @@ class AddonStoreDialog(SettingsDialog):
 	def _makeBanner(self):
 		self.banner = BannerWindow(self, dir=wx.TOP)
 		# Translators: Banner notice that is displayed in the Add-on Store.
-		bannerText = pgettext("addonStore", "Note: NVDA was started with add-ons disabled")
+		bannerText = pgettext("addonStore", "Note: LASR was started with add-ons disabled")
 		self.banner.SetText(
 			bannerText,
 			"",
@@ -222,12 +222,10 @@ class AddonStoreDialog(SettingsDialog):
 
 	@staticmethod
 	def _installationPromptMsg(nAddonsPendingInstall: int) -> str:
-		return npgettext(
-			"addonStore",
+		return npgettext("addonStore",
 			# Translators: Message shown while installing add-ons after closing the add-on store dialog
 			# The placeholder {num} will be replaced with the number of add-ons to be installed
-			"Installing {num} add-on, please wait.",
-			"Installing {num} add-ons, please wait.",
+			"Installing {num} add-on, please wait.", "Installing {num} add-ons, please wait.",
 			nAddonsPendingInstall,
 		).format(num=nAddonsPendingInstall)
 
@@ -315,8 +313,7 @@ class AddonStoreDialog(SettingsDialog):
 
 	@property
 	def _listLabelText(self) -> str:
-		return pgettext(
-			"addonStore",
+		return pgettext("addonStore",
 			# Translators: The label of the add-on list in the add-on store; {category} is replaced by the selected
 			# tab's name.
 			"{category}:",
@@ -442,7 +439,7 @@ class AddonStoreDialog(SettingsDialog):
 
 	def openExternalInstall(self, evt: wx.EVT_BUTTON):
 		# Translators: the label for the NVDA add-on package file type in the Choose add-on dialog.
-		fileTypeLabel = pgettext("addonStore", "NVDA Add-on Package (*.{ext})")
+		fileTypeLabel = pgettext("addonStore", "LASR Add-on Package (*.{ext})")
 		fd = wx.FileDialog(
 			self,
 			# Translators: The message displayed in the dialog that

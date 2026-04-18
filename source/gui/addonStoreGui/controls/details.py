@@ -215,12 +215,10 @@ class AddonDetails(
 			if numSelectedAddons > 1:
 				self.contentsPanel.Hide()
 				self.updateAddonName(
-					npgettext(
-						"addonStore",
+					npgettext("addonStore",
 						# Translators: Header (usually the add-on name) when multiple add-ons are selected.
 						# In the add-on store dialog.
-						"{num} add-on selected.",
-						"{num} add-ons selected.",
+						"{num} add-on selected.", "{num} add-ons selected.",
 						numSelectedAddons,
 					).format(num=numSelectedAddons),
 				)
@@ -277,13 +275,13 @@ class AddonDetails(
 
 				self._appendDetailsLabelValue(
 					# Translators: Label for an extra detail field for the selected add-on. In the add-on store dialog.
-					pgettext("addonStore", "Minimum NVDA version:"),
+					pgettext("addonStore", "Minimum LASR version:"),
 					formatVersionForGUI(*details.minimumNVDAVersion),
 				)
 
 				self._appendDetailsLabelValue(
 					# Translators: Label for an extra detail field for the selected add-on. In the add-on store dialog.
-					pgettext("addonStore", "Last tested NVDA version:"),
+					pgettext("addonStore", "Last tested LASR version:"),
 					formatVersionForGUI(*details.lastTestedNVDAVersion),
 				)
 
@@ -370,14 +368,12 @@ class AddonDetails(
 						self._appendDetailsLabelValue(
 							# Translators: Label for an extra detail field for the selected add-on. In the add-on store dialog.
 							pgettext("addonStore", "VirusTotal scan results:"),
-							npgettext(
-								"addonStore",
+							npgettext("addonStore",
 								# Translators: Summary of VirusTotal scan results for the selected add-on.
 								# {malicious} is the number of vendors that detected the add-on as malicious,
 								# {total} is the total number of vendors that scanned the add-on.
 								# In the add-on store dialog.
-								"{malicious} malware scanner detected this add-on as potentially malicious (out of {total}).",
-								"{malicious} malware scanners detected this add-on as potentially malicious (out of {total}).",
+								"{malicious} malware scanner detected this add-on as potentially malicious (out of {total}).", "{malicious} malware scanners detected this add-on as potentially malicious (out of {total}).",
 								malicious,
 							).format(
 								malicious=malicious,

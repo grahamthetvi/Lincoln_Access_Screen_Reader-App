@@ -1195,8 +1195,7 @@ class WordDocumentTextInfo(textInfos.TextInfo):
 				# Translators:  line spacing of 1.5 lines
 				field["line-spacing"] = pgettext("line spacing value", "1.5 lines")
 			elif lineSpacingRule == wdLineSpaceExactly:
-				field["line-spacing"] = pgettext(
-					"line spacing value",
+				field["line-spacing"] = pgettext("line spacing value",
 					# Translators: line spacing of exactly x point
 					"exactly {space:.1f} pt",
 				).format(space=float(lineSpacingVal))
@@ -1209,11 +1208,9 @@ class WordDocumentTextInfo(textInfos.TextInfo):
 				multiLineSpacingVal = float(lineSpacingVal) / 12.0
 
 				field["line-spacing"] = (
-					npgettext(
-						"line spacing value",
+					npgettext("line spacing value",
 						# Translators: line spacing of x lines
-						"%.1f line",
-						"%.1f lines",
+						"%.1f line", "%.1f lines",
 						multiLineSpacingVal,
 					)
 					% multiLineSpacingVal
@@ -1231,16 +1228,16 @@ class WordDocumentTextInfo(textInfos.TextInfo):
 		field["text-position"] = TextPosition(textPosition)
 		color = field.pop("color", None)
 		if color is not None:
-			field["color"] = self.obj.winwordColorToNVDAColor(int(color))
+			field["color"] = self.obj.winwordColorToLASRColor(int(color))
 		bgColor = field.pop("background-color", None)
 		if bgColor is not None:
-			field["background-color"] = self.obj.winwordColorToNVDAColor(int(bgColor))
+			field["background-color"] = self.obj.winwordColorToLASRColor(int(bgColor))
 		hlColorIndex = field.pop("highlight-color-index", None)
 		if hlColorIndex is not None:
 			hlColor = None
 			try:
 				val = _colorIndexToColor[int(hlColorIndex)]
-				hlColor = self.obj.winwordColorToNVDAColor(val)
+				hlColor = self.obj.winwordColorToLASRColor(val)
 			except (KeyError, ValueError):
 				log.debugWarning("highlight color error", exc_info=True)
 				pass

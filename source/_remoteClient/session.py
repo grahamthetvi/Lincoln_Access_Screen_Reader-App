@@ -162,8 +162,7 @@ class RemoteSession:
 		"""
 		log.error("Protocol version mismatch detected with relay server")
 		ui.message(
-			pgettext(
-				"remote",
+			pgettext("remote",
 				# Translators: Message presented when attempting to connect to an incompatible Remote Access server.
 				"The Remote Access server you have connected to is not compatible with this version of NVDA. Please use a different server.",
 			),
@@ -550,7 +549,7 @@ class LeaderSession(RemoteSession):
 		speech.cancelSpeech()
 		ui.message(
 			# Translators: Message for when the remote NVDA is not connected
-			pgettext("remote", "Remote NVDA not connected"),
+			pgettext("remote", "Remote LASR not connected"),
 		)
 
 	def handleChannelJoined(

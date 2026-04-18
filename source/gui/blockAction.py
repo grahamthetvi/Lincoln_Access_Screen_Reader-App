@@ -56,7 +56,7 @@ class Context(_Context, Enum):
 		lambda: config.isAppX,
 		# Translators: Reported when an action cannot be performed because NVDA has been installed
 		# from the Windows Store.
-		_("Action unavailable in NVDA Windows Store version"),
+		_("Action unavailable in LASR Windows Store version"),
 	)
 	MODAL_DIALOG_OPEN = (
 		_isModalMessageBoxActive,
@@ -74,7 +74,7 @@ class Context(_Context, Enum):
 		lambda: globalVars.appArgs.launcher,
 		# Translators: Reported when an action cannot be performed because NVDA is running the launcher temporary
 		# version
-		_("Action unavailable in a temporary version of NVDA"),
+		_("Action unavailable in a temporary version of LASR"),
 	)
 	BRAILLE_MODE_SPEECH_OUTPUT = (
 		lambda: config.conf["braille"]["mode"] == BrailleMode.SPEECH_OUTPUT.value,

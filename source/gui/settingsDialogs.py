@@ -823,7 +823,7 @@ class GeneralSettingsPanel(SettingsPanel):
 		# Translators: The label for a setting in general settings to select NVDA's interface language
 		# (once selected, NVDA must be restarted; the option user default means the user's Windows language
 		# will be used).
-		languageLabelText = _("NVDA &Language (requires restart):")
+		languageLabelText = _("LASR &Language (requires restart):")
 		self.languageList = settingsSizerHelper.addLabeledControl(
 			languageLabelText,
 			wx.Choice,
@@ -841,7 +841,7 @@ class GeneralSettingsPanel(SettingsPanel):
 
 		# Translators: The label for a setting in general settings to save current configuration when NVDA
 		# exits (if it is not checked, user needs to save configuration before quitting NVDA).
-		self.saveOnExitCheckBox = wx.CheckBox(self, label=_("&Save configuration when exiting NVDA"))
+		self.saveOnExitCheckBox = wx.CheckBox(self, label=_("&Save configuration when exiting LASR"))
 		self.bindHelpEvent("GeneralSettingsSaveConfig", self.saveOnExitCheckBox)
 		self.saveOnExitCheckBox.SetValue(config.conf["general"]["saveConfigurationOnExit"])
 		if globalVars.appArgs.secure:
@@ -849,7 +849,7 @@ class GeneralSettingsPanel(SettingsPanel):
 		settingsSizerHelper.addItem(self.saveOnExitCheckBox)
 
 		# Translators: The label for a setting in general settings to ask before quitting NVDA (if not checked, NVDA will exit without asking the user for action).
-		self.askToExitCheckBox = wx.CheckBox(self, label=_("Sho&w exit options when exiting NVDA"))
+		self.askToExitCheckBox = wx.CheckBox(self, label=_("Sho&w exit options when exiting LASR"))
 		self.askToExitCheckBox.SetValue(config.conf["general"]["askToExit"])
 		settingsSizerHelper.addItem(self.askToExitCheckBox)
 		self.bindHelpEvent("GeneralSettingsShowExitOptions", self.askToExitCheckBox)
@@ -857,7 +857,7 @@ class GeneralSettingsPanel(SettingsPanel):
 		self.playStartAndExitSoundsCheckBox = wx.CheckBox(
 			self,
 			# Translators: The label for a setting in general settings to play sounds when NVDA starts or exits.
-			label=_("&Play sounds when starting or exiting NVDA"),
+			label=_("&Play sounds when starting or exiting LASR"),
 		)
 		self.bindHelpEvent("GeneralSettingsPlaySounds", self.playStartAndExitSoundsCheckBox)
 		self.playStartAndExitSoundsCheckBox.SetValue(config.conf["general"]["playStartAndExitSounds"])
@@ -866,7 +866,7 @@ class GeneralSettingsPanel(SettingsPanel):
 		# Translators: The label for a setting in general settings to allow NVDA to start after logging onto
 		# Windows (if checked, NVDA will start automatically after logging into Windows; if not, user must
 		# start NVDA by pressing the shortcut key (CTRL+Alt+N by default).
-		self.startAfterLogonCheckBox = wx.CheckBox(self, label=_("St&art NVDA after I sign in"))
+		self.startAfterLogonCheckBox = wx.CheckBox(self, label=_("St&art LASR after I sign in"))
 		self.startAfterLogonCheckBox.SetValue(config.getStartAfterLogon())
 		if globalVars.appArgs.secure or not config.isInstalledCopy():
 			self.startAfterLogonCheckBox.Disable()
@@ -878,7 +878,7 @@ class GeneralSettingsPanel(SettingsPanel):
 			# allow NVDA to come up in Windows login screen (useful if user
 			# needs to enter passwords or if multiple user accounts are present
 			# to allow user to choose the correct account).
-			label=_("Use NVDA during sign-in (requires administrator privileges)"),
+			label=_("Use LASR during sign-in (requires administrator privileges)"),
 		)
 		self.bindHelpEvent("GeneralSettingsStartOnLogOnScreen", self.startOnLogonScreenCheckBox)
 		self.startOnLogonScreenCheckBox.SetValue(config.getStartOnLogonScreen())
@@ -978,7 +978,7 @@ class GeneralSettingsPanel(SettingsPanel):
 		changeMirror = _SetURLDialog(
 			self,
 			# Translators: Title of the dialog used to change NVDA's update server mirror URL.
-			title=_("Set NVDA Update Mirror"),
+			title=_("Set LASR Update Mirror"),
 			configPath=("update", "serverURL"),
 			helpId="SetURLDialog",
 			urlTransformer=lambda url: f"{url}?versionType=stable",
@@ -1038,11 +1038,11 @@ class GeneralSettingsPanel(SettingsPanel):
 		del progressDialog
 		if not res:
 			# Translators: The message displayed when errors were found while trying to copy current configuration to system settings.
-			gui.messageBox(_("Error copying NVDA user settings"), _("Error"), wx.OK | wx.ICON_ERROR, self)
+			gui.messageBox(_("Error copying LASR user settings"), _("Error"), wx.OK | wx.ICON_ERROR, self)
 		else:
 			gui.messageBox(
 				# Translators: The message displayed when copying configuration to system settings was successful.
-				_("Successfully copied NVDA user settings"),
+				_("Successfully copied LASR user settings"),
 				# Translators: The message title displayed when copying configuration to system settings was successful.
 				_("Success"),
 				wx.OK | wx.ICON_INFORMATION,
@@ -1112,7 +1112,7 @@ class LanguageRestartDialog(
 		sHelper = guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
 		sHelper.addItem(
 			# Translators: The message displayed after NVDA interface language has been changed.
-			wx.StaticText(self, label=_("NVDA must be restarted for the new language to take effect.")),
+			wx.StaticText(self, label=_("LASR must be restarted for the new language to take effect.")),
 		)
 
 		bHelper = sHelper.addDialogDismissButtons(guiHelper.ButtonHelper(wx.HORIZONTAL))
@@ -1687,8 +1687,7 @@ class VoiceSettingsPanel(AutoSettingsMixin, SettingsPanel):
 			config.conf["speech"]["reportLanguage"],
 		)
 
-		labelText = pgettext(
-			"reportLanguage",
+		labelText = pgettext("reportLanguage",
 			# Translators: This is a label for a combobox in the Voice settings panel to select
 			# reporting when the language of the text being read is not supported by the current synthesizer.
 			"Report when switching to language is not s&upported by synthesizer",
@@ -2014,7 +2013,7 @@ class KeyboardSettingsPanel(SettingsPanel):
 
 		# Translators: This is the label for a list of checkboxes
 		# controlling which keys are NVDA modifier keys.
-		modifierBoxLabel = _("&Select NVDA Modifier Keys")
+		modifierBoxLabel = _("&Select LASR Modifier Keys")
 		self.modifierChoices = [key.displayString for key in NVDAKey]
 		self.modifierList = sHelper.addLabeledControl(
 			modifierBoxLabel,
@@ -2135,10 +2134,10 @@ class KeyboardSettingsPanel(SettingsPanel):
 			log.debugWarning("No NVDA key set")
 			self._validationErrorMessageBox(
 				# Translators: Message to report wrong configuration of the NVDA key
-				message=_("At least one key must be used as the NVDA key."),
+				message=_("At least one key must be used as the LASR key."),
 				# Translators: Same as the label for the list of checkboxes controlling which keys are NVDA modifier
 				# keys in Keyboard Settings, but without keyboard accelerator (& character).
-				option=_("Select NVDA Modifier Keys"),
+				option=_("Select LASR Modifier Keys"),
 			)
 			return False
 		return super().isValid()
@@ -2709,8 +2708,7 @@ class MathSettingsPanel(SettingsPanel):
 	# Translators: Title of the math settings panel.
 	title = pgettext("math", "Math")
 	helpId = "MathSettings"
-	panelDescription = pgettext(
-		"math",
+	panelDescription = pgettext("math",
 		# Translators: The description of the math settings panel.
 		"The following options control the presentation of mathematical content.",
 	)
@@ -3160,7 +3158,7 @@ class DocumentFormattingPanel(SettingsPanel):
 	helpId = "DocumentFormattingSettings"
 
 	# Translators: This is a label appearing on the document formatting settings panel.
-	panelDescription = _("The following options control the types of document formatting reported by NVDA.")
+	panelDescription = _("The following options control the types of document formatting reported by LASR.")
 
 	def makeSettings(self, settingsSizer):
 		sHelper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
@@ -3607,7 +3605,7 @@ class AudioPanel(SettingsPanel):
 
 		# Translators: This is the label for a checkbox control in the
 		# Audio settings panel.
-		label = _("Volume of NVDA sounds follows voice volume")
+		label = _("Volume of LASR sounds follows voice volume")
 		self.soundVolFollowCheckBox: wx.CheckBox = sHelper.addItem(wx.CheckBox(self, label=label))
 		self.bindHelpEvent("SoundVolumeFollowsVoice", self.soundVolFollowCheckBox)
 		self.soundVolFollowCheckBox.SetValue(config.conf["audio"]["soundVolumeFollowsVoice"])
@@ -3615,7 +3613,7 @@ class AudioPanel(SettingsPanel):
 
 		# Translators: This is the label for a slider control in the
 		# Audio settings panel.
-		label = _("Volume of NVDA sounds")
+		label = _("Volume of LASR sounds")
 		self.soundVolSlider: nvdaControls.EnhancedInputSlider = sHelper.addLabeledControl(
 			label,
 			nvdaControls.EnhancedInputSlider,
@@ -3905,7 +3903,7 @@ class RemoteSettingsPanel(SettingsPanel):
 			wx.CheckBox(
 				self.remoteSettingsGroupBox,
 				# Translators: A checkbox in Remote Access settings to set whether NVDA should automatically connect to a control server on startup.
-				label=pgettext("remote", "Automatically &connect after NVDA starts"),
+				label=pgettext("remote", "Automatically &connect after LASR starts"),
 			),
 		)
 		self.autoconnect.Bind(wx.EVT_CHECKBOX, self._onAutoconnect)
@@ -4056,8 +4054,7 @@ class RemoteSettingsPanel(SettingsPanel):
 	def onDeleteFingerprints(self, evt: wx.CommandEvent) -> None:
 		"""Respond to presses of the delete trusted fingerprints button."""
 		deleteFingerprints = gui.messageBox(
-			pgettext(
-				"remote",
+			pgettext("remote",
 				# Translators: This message is presented when the user tries to delete all stored trusted fingerprints.
 				"This will cause NVDA to forget all previously trusted Remote Access servers. "
 				"When connecting to a previously trusted unrecognised server, you will again be asked whether to trust its certificate.\n\n"
@@ -4078,8 +4075,7 @@ class RemoteSettingsPanel(SettingsPanel):
 			if not self.clientOrServer.GetSelection() and (
 				not self.host.GetValue() or not self.key.GetValue()
 			):
-				message = pgettext(
-					"remote",
+				message = pgettext("remote",
 					# Translators: This message is presented when the user tries to save the settings with the host or key field empty.
 					"Both host and key must be set in the Remote Access section in order to automatically connect using an existing server after NVDA starts.",
 				)
@@ -4221,7 +4217,7 @@ class AdvancedPanelControls(
 		self.SetSizer(sHelper.sizer)
 		# Translators: This is the label for a group of advanced options in the
 		#  Advanced settings panel
-		groupText = _("NVDA Development")
+		groupText = _("LASR Development")
 		devGroupSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=groupText)
 		devGroupBox = devGroupSizer.GetStaticBox()
 		devGroup = guiHelper.BoxSizerHelper(self, sizer=devGroupSizer)
@@ -4302,8 +4298,7 @@ class AdvancedPanelControls(
 			self._getDefaultValue(["UIA", "eventRegistration"]),
 		)
 
-		label = pgettext(
-			"advanced.uiaWithMSWord",
+		label = pgettext("advanced.uiaWithMSWord",
 			# Translators: Label for the Use UIA with MS Word combobox, in the Advanced settings panel.
 			"Use UI Automation to access Microsoft &Word document controls",
 		)
@@ -4364,8 +4359,7 @@ class AdvancedPanelControls(
 			self._getDefaultValue(["UIA", "winConsoleImplementation"]),
 		)
 
-		label = pgettext(
-			"advanced.uiaWithChromium",
+		label = pgettext("advanced.uiaWithChromium",
 			# Translators: Label for the Use UIA with Chromium combobox, in the Advanced settings panel.
 			# Note the '\n' is used to split this long label approximately in half.
 			"Use UIA with Microsoft Edge and other \n&Chromium based browsers when available:",
@@ -6247,7 +6241,7 @@ class PrivacyAndSecuritySettingsPanel(SettingsPanel):
 
 		self._allowUsageStatsCheckBox: wx.CheckBox = generalGroup.addItem(
 			# Translators: The label of a checkbox in privacy and security settings to toggle allowing of usage stats gathering
-			wx.CheckBox(generalBox, label=_("Allow NV Access to gather NVDA usage statistics")),
+			wx.CheckBox(generalBox, label=_("Allow NV Access to gather LASR usage statistics")),
 		)
 		self.bindHelpEvent("GeneralSettingsGatherUsageStats", self._allowUsageStatsCheckBox)
 		self._allowUsageStatsCheckBox.Value = config.conf["update"]["allowUsageStats"]
@@ -6364,7 +6358,7 @@ NvdaSettingsDialogWindowHandle = None
 
 class NVDASettingsDialog(MultiCategorySettingsDialog):
 	# Translators: This is the label for the NVDA settings dialog.
-	title = _("NVDA Settings")
+	title = _("LASR Settings")
 	categoryClasses = [
 		GeneralSettingsPanel,
 		SpeechSettingsPanel,

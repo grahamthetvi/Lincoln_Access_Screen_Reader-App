@@ -191,7 +191,7 @@ def browseableMessage(
 
 	if title is None:
 		# Translators: The title for the dialog used to present general NVDA messages in browse mode.
-		title = _("NVDA Message")
+		title = _("LASR Message")
 	d.add("title", title)
 
 	if not isHtml:

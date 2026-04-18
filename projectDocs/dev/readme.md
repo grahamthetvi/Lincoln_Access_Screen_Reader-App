@@ -1,5 +1,8 @@
 # Developing NVDA
 
+## Project Intention (LASR)
+> **Note to Developers:** The primary goal of the Lincoln Access Screen Reader (LASR) is to provide American users who are restricted to American-made products an option to use the NVDA screen reader through an American vendor. While the core functionality is derived from NVDA, this project operates under an American vendor identity to satisfy strict procurement requirements.
+
 ## Important links
 
 * [Refer to contributing.md](./contributing.md) for contributing code/documentation to NVDA.

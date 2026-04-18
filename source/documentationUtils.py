@@ -95,6 +95,6 @@ def displayLicense():
 	ui.browseableMessage(
 		_getSanitizedHtmlLicense(),
 		# Translators: The title of the dialog to show the NVDA License.
-		_("NVDA License"),
+		_("LASR License"),
 		isHtml=True,
 	)

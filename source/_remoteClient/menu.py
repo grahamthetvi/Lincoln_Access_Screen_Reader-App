@@ -79,8 +79,7 @@ class RemoteMenu(wx.Menu):
 			self,
 			# Translators: Label of the Remote Access submenu in the NVDA tools menu.
 			pgettext("remote", "R&emote Access"),
-			pgettext(
-				"remote",
+			pgettext("remote",
 				# Translators: Tooltip for the Remote Access submenu in the NVDA Tools menu.
 				"Allow someone to control this computer from elsewhere, or control another computer running NVDA with this one.",
 			),
@@ -155,7 +154,7 @@ class RemoteMenu(wx.Menu):
 		# Translators: Item in the Remote Access submenu to connect to another computer.
 		self.connectionItem.SetItemLabel(_("Connect..."))
 		# Translators: Tooltip for the Connect menu item in the Remote Access submenu.
-		self.connectionItem.SetHelp(pgettext("remote", "Remotely connect to another computer running NVDA."))
+		self.connectionItem.SetHelp(pgettext("remote", "Remotely connect to another computer running LASR."))
 		gui.mainFrame.sysTrayIcon.Unbind(wx.EVT_MENU, self.connectionItem)
 		gui.mainFrame.sysTrayIcon.Bind(
 			wx.EVT_MENU,

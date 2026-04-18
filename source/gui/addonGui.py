@@ -32,7 +32,7 @@ def promptUserForRestart():
 		"Would you like to restart now?",
 	)
 	# Translators: Title for message asking if the user wishes to restart NVDA as addons have been added or removed.
-	restartTitle = _("Restart NVDA")
+	restartTitle = _("Restart LASR")
 	result = gui.messageBox(
 		message=restartMessage,
 		caption=restartTitle,
@@ -268,7 +268,7 @@ def handleRemoteAddonInstall(addonPath: str):
 	if config.isAppX:
 		gui.messageBox(
 			# Translators: The message displayed when an add-on cannot be installed due to NVDA running as a Windows Store app
-			_("Add-ons cannot be installed in the Windows Store version of NVDA"),
+			_("Add-ons cannot be installed in the Windows Store version of LASR"),
 			# Translators: The title of a dialog presented when an error occurs.
 			_("Error"),
 			wx.OK | wx.ICON_ERROR,

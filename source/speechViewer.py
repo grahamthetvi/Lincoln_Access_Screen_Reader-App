@@ -41,7 +41,7 @@ class SpeechViewerFrame(
 		dialogSize, dialogPos = self._getDialogSizeAndPosition()
 		super().__init__(
 			gui.mainFrame,
-			title=_("NVDA Speech Viewer"),
+			title=_("LASR Speech Viewer"),
 			size=dialogSize,
 			pos=dialogPos,
 			style=wx.CAPTION | wx.CLOSE_BOX | wx.RESIZE_BORDER | wx.STAY_ON_TOP,

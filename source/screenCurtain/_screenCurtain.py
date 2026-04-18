@@ -29,8 +29,7 @@ TRANSFORM_BLACK.transform[3][3] = 1.0  # retain opacity, while scaling other col
 # the screen curtain.
 WARN_ON_LOAD_CHECKBOX_TEXT = pgettext("screenCurtain", "Always &show a warning when enabling Screen Curtain")
 
-UNAVAILABLE_WHEN_RECOGNISING_CONTENT_MESSAGE = pgettext(
-	"screenCurtain",
+UNAVAILABLE_WHEN_RECOGNISING_CONTENT_MESSAGE = pgettext("screenCurtain",
 	# Translators: Warning message when trying to enable the screen curtain when OCR is active.
 	"Cannot enable screen curtain while performing content recognition",
 )

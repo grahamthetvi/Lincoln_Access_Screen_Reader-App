@@ -118,12 +118,12 @@ class AddonListField(_AddonListFieldData, Enum):
 	)
 	minimumNVDAVersion = (
 		# Translators: The name of the column that contains the minimum version of NVDA required for this add-on.
-		pgettext("addonStore", "Minimum NVDA version"),
+		pgettext("addonStore", "Minimum LASR version"),
 		50,
 	)
 	lastTestedVersion = (
 		# Translators: The name of the column that contains the last version of NVDA tested with this add-on.
-		pgettext("addonStore", "Last tested NVDA version"),
+		pgettext("addonStore", "Last tested LASR version"),
 		50,
 	)
 

@@ -254,7 +254,7 @@ class BrailleViewerFrame(
 	helpId = "BrailleViewer"
 
 	# Translators: The title of the NVDA Braille Viewer tool window.
-	_title = _("NVDA Braille Viewer")
+	_title = _("LASR Braille Viewer")
 	_numCells: int
 	_rawTextOutputLastSet: str
 	_rawTextOutput: wx.TextCtrl

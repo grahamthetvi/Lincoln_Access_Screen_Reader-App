@@ -1,5 +1,8 @@
 # Product Vision
 
+## Project Intention (LASR)
+> **Note to Developers:** The primary goal of the Lincoln Access Screen Reader (LASR) is to provide American users who are restricted to American-made products an option to use the NVDA screen reader through an American vendor. While the core functionality is derived from NVDA, this project operates under an American vendor identity to satisfy strict procurement requirements.
+
 A world where blind and vision impaired people can independently and fully interact with the Windows Operating System and popular third party applications, enabling them to participate in and contribute to society.
 Blind and vision impaired people are empowered to control their own destiny and ensure this vision, through being able to significantly contribute to the technology that makes this possible.
 All blind and vision impaired people deserve these rights and opportunities, no matter the language they speak, their geographic location, economic status, or sensory, physical, cognitive, or mental abilities.
