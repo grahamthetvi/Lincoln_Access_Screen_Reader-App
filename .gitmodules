@@ -42,3 +42,12 @@
 [submodule "include/nvda-mathcat"]
 	path = include/nvda-mathcat
 	url = https://github.com/nvaccess/nvda-mathcat.git
+[submodule "include/detours"]
+	path = include/detours
+	url = https://github.com/microsoft/Detours.git
+[submodule "include/nvda-cldr"]
+	path = include/nvda-cldr
+	url = https://github.com/nvaccess/nvda-cldr.git
+[submodule ".vscode"]
+	path = .vscode
+	url = https://github.com/nvaccess/vscode-nvda.git
