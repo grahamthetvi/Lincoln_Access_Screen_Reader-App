@@ -195,6 +195,7 @@ def checkForUpdate(auto: bool = False) -> UpdateInfo | None:
 	:return: An UpdateInfo object containing the update metadata, or None if there is no update.
 	:raise RuntimeError: If there is an error checking for an update.
 	"""
+	return None
 	allowUsageStats = config.conf["update"]["allowUsageStats"]
 	# #11837: build version string, service pack, and product type manually
 	# because winVersion.getWinVer adds Windows release name.
@@ -941,55 +942,7 @@ class UpdateDownloader(garbageHandler.TrackedObject):
 		)
 
 
-class DonateRequestDialog(wx.Dialog):
-	MESSAGE = _(
-		# Translators: The message requesting donations from users.
-		"We need your help in order to continue to improve NVDA.\n"
-		"This project relies primarily on donations and grants. By donating, you are helping to fund full time development.\n"
-		"If even $10 is donated for every download, we will be able to cover all of the ongoing costs of the project.\n"
-		"All donations are received by NV Access, the non-profit organisation which develops NVDA.\n"
-		"Thank you for your support.",
-	)
 
-	def __init__(self, parent, continueFunc):
-		# Translators: The title of the dialog requesting donations from users.
-		super(DonateRequestDialog, self).__init__(parent, title=_("Please Donate"))
-		self._continue = continueFunc
-
-		mainSizer = wx.BoxSizer(wx.VERTICAL)
-		item = wx.StaticText(self, label=self.MESSAGE)
-		mainSizer.Add(item, border=20, flag=wx.LEFT | wx.RIGHT | wx.TOP)
-		sizer = wx.BoxSizer(wx.HORIZONTAL)
-		# Translators: The label of the button to donate
-		# in the "Please Donate" dialog.
-		item = self.donateButton = wx.Button(self, label=_("&Donate"))
-		item.Bind(wx.EVT_BUTTON, self.onDonate)
-		sizer.Add(item)
-		# Translators: The label of the button to decline donation
-		# in the "Please Donate" dialog.
-		item = wx.Button(self, wx.ID_CLOSE, label=_("&Not now"))
-		item.Bind(wx.EVT_BUTTON, lambda evt: self.Close())
-		sizer.Add(item)
-		self.Bind(wx.EVT_CLOSE, self.onClose)
-		self.EscapeId = wx.ID_CLOSE
-		mainSizer.Add(sizer, flag=wx.TOP | wx.BOTTOM | wx.ALIGN_CENTER_HORIZONTAL, border=20)
-
-		self.Sizer = mainSizer
-		mainSizer.Fit(self)
-		self.CentreOnScreen()
-		self.Show()
-
-	def onDonate(self, evt):
-		os.startfile(buildVersion.url)
-		# Translators: The label of a button to indicate that the user is finished donating
-		# in the "Please Donate" dialog.
-		self.donateButton.Label = _("&Done")
-		self.donateButton.Bind(wx.EVT_BUTTON, lambda evt: self.Close())
-
-	def onClose(self, evt):
-		self.Hide()
-		self._continue()
-		self.Destroy()
 
 
 def saveState():

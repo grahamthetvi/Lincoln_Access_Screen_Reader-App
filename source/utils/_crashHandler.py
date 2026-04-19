@@ -175,16 +175,7 @@ def crashHandler(exceptionInfo):
 	ctypes.pythonapi.PyThreadState_SetAsyncExc(threadId, None)
 
 	# Write a minidump.
-	if not NVDAState.shouldWriteToDisk():
-		log.critical("NVDA crashed! Not writing minidump, as shouldWriteToDisk returned False.")
-	elif (logFileName := globalVars.appArgs.logFileName) is not None:
-		dumpPath = os.path.join(os.path.dirname(logFileName), "nvda_crash.dmp")
-		if not NVDAHelper.localLib.writeCrashDump(dumpPath, exceptionInfo):
-			log.critical("NVDA crashed! Error writing minidump", exc_info=True)
-		else:
-			log.critical(f"NVDA crashed! Minidump written to {dumpPath}")
-	else:
-		log.critical("NVDA crashed! Not writing minidump as logFileName is None")
+	log.critical("NVDA crashed! Not writing minidump for privacy constraints.")
 
 	# Log Python stacks for every thread.
 	stacks = getFormattedStacksForAllThreads()

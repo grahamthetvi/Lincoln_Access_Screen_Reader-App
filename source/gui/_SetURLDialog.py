@@ -155,11 +155,8 @@ class _SetURLDialog(SettingsDialog):
 	def _bg(self):
 		"""Background URL connection thread."""
 		try:
-			with requests.get(self._urlTransformer(self._url)) as r:
-				r.raise_for_status()
-				if not self._responseValidator(r):
-					raise _ValidationError
-			self._success()
+			# Disabled for student privacy
+			raise requests.exceptions.ConnectionError("Network access is disabled for privacy.")
 		except (RequestException, _ValidationError) as e:
 			log.debug(f"URL check failed: {e}")
 			self._failure(e)

@@ -6239,15 +6239,7 @@ class PrivacyAndSecuritySettingsPanel(SettingsPanel):
 		except StopIteration:
 			log.debugWarning("Could not set log level list to current log level")
 
-		self._allowUsageStatsCheckBox: wx.CheckBox = generalGroup.addItem(
-			# Translators: The label of a checkbox in privacy and security settings to toggle allowing of usage stats gathering
-			wx.CheckBox(generalBox, label=_("Allow NV Access to gather LASR usage statistics")),
-		)
-		self.bindHelpEvent("GeneralSettingsGatherUsageStats", self._allowUsageStatsCheckBox)
-		self._allowUsageStatsCheckBox.Value = config.conf["update"]["allowUsageStats"]
-		if not updateCheck:
-			self._allowUsageStatsCheckBox.Value = False
-			self._allowUsageStatsCheckBox.Disable()
+
 
 	def onDiscard(self):
 		# Restore screen curtain state and setting to the most recently saved baseline,
@@ -6279,9 +6271,7 @@ class PrivacyAndSecuritySettingsPanel(SettingsPanel):
 			)
 			logHandler.setLogLevelFromConfig()
 
-		if updateCheck:
-			config.conf["update"]["allowUsageStats"] = self._allowUsageStatsCheckBox.IsChecked()
-			# updateCheck queries this value whenever checking for updates, so there's no need to restart it
+
 
 		if screenCurtain.screenCurtain is not None:
 			self._cachedScreenCurtainConfigEnabled = screenCurtain.screenCurtain.settings["enabled"]

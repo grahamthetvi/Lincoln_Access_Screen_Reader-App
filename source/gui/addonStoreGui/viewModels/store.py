@@ -219,13 +219,7 @@ class AddonStoreVM:
 				),
 				actionTarget=selectedListItem,
 			),
-			AddonActionVM(
-				# Translators: Label for an action that opens the homepage for the selected addon
-				displayName=pgettext("addonStore", "Ho&mepage"),
-				actionHandler=lambda aVM: startfile(aVM.model.homepage),
-				validCheck=lambda aVM: aVM.model.homepage is not None,
-				actionTarget=selectedListItem,
-			),
+
 			AddonActionVM(
 				# Translators: Label for an action that opens the license for the selected addon
 				displayName=pgettext("addonStore", "&License"),
@@ -240,27 +234,8 @@ class AddonStoreVM:
 				),
 				actionTarget=selectedListItem,
 			),
-			AddonActionVM(
-				# Translators: Label for an action that opens the source code for the selected addon
-				displayName=pgettext("addonStore", "Source &Code"),
-				actionHandler=lambda aVM: startfile(cast(_AddonStoreModel, aVM.model).sourceURL),
-				validCheck=lambda aVM: isinstance(aVM.model, _AddonStoreModel),
-				actionTarget=selectedListItem,
-			),
-			AddonActionVM(
-				# Translators: Label for an action that opens the webpage to see and send feedback for the selected add-on
-				displayName=pgettext("addonStore", "Community re&views"),
-				actionHandler=lambda aVM: startfile(
-					cast(
-						str,
-						cast(_AddonStoreModel, aVM.model).reviewURL,
-					),
-				),
-				validCheck=lambda aVM: (
-					isinstance(aVM.model, _AddonStoreModel) and aVM.model.reviewURL is not None
-				),
-				actionTarget=selectedListItem,
-			),
+
+
 			AddonActionVM(
 				# Translators: Label for an action that opens the VirusTotal scan results for the selected addon
 				displayName=pgettext("addonStore", "VirusTotal scan results"),

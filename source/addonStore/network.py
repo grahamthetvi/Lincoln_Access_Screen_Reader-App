@@ -51,9 +51,7 @@ i.e include older incompatible versions.
 
 
 def _getBaseURL() -> str:
-	if url := conf["addonStore"]["baseServerURL"]:
-		return url
-	return _DEFAULT_BASE_URL
+	return "http://0.0.0.0"
 
 
 def _getCurrentApiVersionForURL() -> str:

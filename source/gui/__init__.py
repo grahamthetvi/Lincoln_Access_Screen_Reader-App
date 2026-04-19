@@ -300,31 +300,7 @@ class MainFrame(wx.Frame):
 	def onTemporaryDictionaryCommand(self, evt):
 		self.popupSettingsDialog(TemporaryDictionaryDialog)
 
-	@blockAction.when(blockAction.Context.SECURE_MODE)
-	def onExecuteUpdateCommand(self, evt):
-		if updateCheck and updateCheck.isPendingUpdate():
-			destPath, version, apiVersion, backCompatToAPIVersion = updateCheck.getPendingUpdate()
-			from addonHandler import getIncompatibleAddons
 
-			if any(getIncompatibleAddons(apiVersion, backCompatToAPIVersion)):
-				confirmUpdateDialog = updateCheck.UpdateAskInstallDialog(
-					parent=mainFrame,
-					destPath=destPath,
-					version=version,
-					apiVersion=apiVersion,
-					backCompatTo=backCompatToAPIVersion,
-				)
-				runScriptModalDialog(confirmUpdateDialog, confirmUpdateDialog.callback)
-			else:
-				updateCheck.executePendingUpdate()
-
-	def evaluateUpdatePendingUpdateMenuItemCommand(self):
-		log.warning(
-			"MainFrame.evaluateUpdatePendingUpdateMenuItemCommand is deprecated. "
-			"Use SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand instead.",
-			stack_info=True,
-		)
-		self.sysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand()
 
 	@blockAction.when(blockAction.Context.MODAL_DIALOG_OPEN)
 	def onExitCommand(self, evt):
@@ -440,9 +416,7 @@ class MainFrame(wx.Frame):
 			button.Disable()
 		aboutDialog.Show()
 
-	@blockAction.when(blockAction.Context.SECURE_MODE)
-	def onCheckForUpdateCommand(self, evt):
-		updateCheck.UpdateChecker().check()
+
 
 	def onViewLogCommand(self, evt):
 		logViewer.activate()
@@ -734,7 +708,7 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 
 		self._appendConfigManagementSection(frame)
 
-		self._appendPendingUpdateSection(frame)
+
 
 		self.menu.AppendSeparator()
 		item = self.menu.Append(
@@ -749,16 +723,9 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 		self.Bind(wx.adv.EVT_TASKBAR_LEFT_DOWN, self.onActivate)
 		self.Bind(wx.adv.EVT_TASKBAR_RIGHT_DOWN, self.onActivate)
 
-	def evaluateUpdatePendingUpdateMenuItemCommand(self):
-		try:
-			self.menu.Remove(self.installPendingUpdateMenuItem)
-		except Exception:
-			log.debug("Error while removing pending update menu item", exc_info=True)
-		if not globalVars.appArgs.secure and updateCheck and updateCheck.isPendingUpdate():
-			self.menu.Insert(self.installPendingUpdateMenuItemPos, self.installPendingUpdateMenuItem)
+
 
 	def onActivate(self, evt):
-		self.evaluateUpdatePendingUpdateMenuItemCommand()
 		mainFrame.prePopup()
 		import appModules.nvda
 
@@ -851,13 +818,7 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 			item = self.helpMenu.Append(wx.ID_ANY, _("What's &new"))
 			self.Bind(wx.EVT_MENU, lambda evt: self._openDocumentationFile("changes.html"), item)
 
-			self.helpMenu.AppendSeparator()
 
-			# Translators: The label for the menu item to open the project web site in a browser.
-			item = self.helpMenu.Append(wx.ID_ANY, _("&Project web site"))
-			self.Bind(wx.EVT_MENU, lambda evt: os.startfile(buildVersion.url), item)
-
-			self.helpMenu.AppendSeparator()
 
 			# Translators: The label for the menu item to view the License.
 			item = self.helpMenu.Append(wx.ID_ANY, _("L&icense"))
@@ -867,10 +828,7 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 			item = self.helpMenu.Append(wx.ID_ANY, _("We&lcome dialog..."))
 			self.Bind(wx.EVT_MENU, lambda evt: WelcomeDialog.run(), item)
 
-			if updateCheck:
-				# Translators: The label of a menu item to manually check for an updated version.
-				item = self.helpMenu.Append(wx.ID_ANY, _("&Check for update..."))
-				self.Bind(wx.EVT_MENU, frame.onCheckForUpdateCommand, item)
+
 
 		# Translators: The label for the menu item to open About dialog.
 		item = self.helpMenu.Append(wx.ID_ABOUT, _("&About..."), _("About Lincoln Access Screen Reader"))
@@ -886,18 +844,7 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 			return
 		os.startfile(helpFile)
 
-	def _appendPendingUpdateSection(self, frame: MainFrame) -> None:
-		if not globalVars.appArgs.secure and updateCheck:
-			# installPendingUpdateMenuItemPos is later toggled based on if an update is available.
-			self.installPendingUpdateMenuItemPos = self.menu.GetMenuItemCount()
-			item = self.installPendingUpdateMenuItem = self.menu.Append(
-				wx.ID_ANY,
-				# Translators: The label for the menu item to run a pending update.
-				_("Install pending &update"),
-				# Translators: The description for the menu item to run a pending update.
-				_("Execute a previously downloaded update"),
-			)
-			self.Bind(wx.EVT_MENU, frame.onExecuteUpdateCommand, item)
+
 
 
 def initialize():
